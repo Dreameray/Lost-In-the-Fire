@@ -1,0 +1,517 @@
+fileFormatVersion: 2
+guid: a2fa23cc9b9077b488972eef798497ab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5286803213411539529
+    second: A_charming_16_bit_2D...-1803368983-0_0
+  - first:
+      213: 2767113521142134516
+    second: A_charming_16_bit_2D...-1803368983-0_1
+  - first:
+      213: 2920371781582230921
+    second: A_charming_16_bit_2D...-1803368983-0_2
+  - first:
+      213: -8042659678867102449
+    second: A_charming_16_bit_2D...-1803368983-0_3
+  - first:
+      213: -4929868821069742108
+    second: A_charming_16_bit_2D...-1803368983-0_4
+  - first:
+      213: -4999533162372576790
+    second: A_charming_16_bit_2D...-1803368983-0_5
+  - first:
+      213: -118402654013560079
+    second: A_charming_16_bit_2D...-1803368983-0_6
+  - first:
+      213: -6800801963203348535
+    second: A_charming_16_bit_2D...-1803368983-0_7
+  - first:
+      213: -5303507405543255239
+    second: A_charming_16_bit_2D...-1803368983-0_8
+  - first:
+      213: 3546156689421282041
+    second: A_charming_16_bit_2D...-1803368983-0_9
+  - first:
+      213: -3399125660441988746
+    second: A_charming_16_bit_2D...-1803368983-0_10
+  - first:
+      213: -368251988363735283
+    second: A_charming_16_bit_2D...-1803368983-0_11
+  - first:
+      213: 7070206195895861366
+    second: A_charming_16_bit_2D...-1803368983-0_12
+  - first:
+      213: 297256110923099451
+    second: A_charming_16_bit_2D...-1803368983-0_13
+  - first:
+      213: 1921615846195355203
+    second: A_charming_16_bit_2D...-1803368983-0_14
+  - first:
+      213: -9086340557669425272
+    second: A_charming_16_bit_2D...-1803368983-0_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 575
+        width: 78
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b52633fc7081a6b0800000000000000
+      internalID: -5286803213411539529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_1
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 579
+        width: 78
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f67bd03613c66620800000000000000
+      internalID: 2767113521142134516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_2
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 575
+        width: 78
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 985984d99ae378820800000000000000
+      internalID: 2920371781582230921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_3
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 579
+        width: 78
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f05e4c742abb26090800000000000000
+      internalID: -8042659678867102449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_4
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 387
+        width: 78
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ef3dd24d66959bb0800000000000000
+      internalID: -4929868821069742108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_5
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 387
+        width: 78
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae94ff5d3171e9ab0800000000000000
+      internalID: -4999533162372576790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_6
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 387
+        width: 78
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1faee0bd9695b5ef0800000000000000
+      internalID: -118402654013560079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_7
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 387
+        width: 78
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c73c7b85a2be91a0800000000000000
+      internalID: -6800801963203348535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_8
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 195
+        width: 78
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933d0f42d182666b0800000000000000
+      internalID: -5303507405543255239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_9
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 195
+        width: 78
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9faa4de78ba763130800000000000000
+      internalID: 3546156689421282041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_10
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 195
+        width: 78
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671b07e9831e3d0d0800000000000000
+      internalID: -3399125660441988746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_11
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 195
+        width: 78
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0f8fb584c4b3eaf0800000000000000
+      internalID: -368251988363735283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_12
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 3
+        width: 78
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 670832b531b6e1260800000000000000
+      internalID: 7070206195895861366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_13
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 3
+        width: 78
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3da2e2abd0102400800000000000000
+      internalID: 297256110923099451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_14
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 3
+        width: 78
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e5c335e63faaa10800000000000000
+      internalID: 1921615846195355203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_charming_16_bit_2D...-1803368983-0_15
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 3
+        width: 78
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f93ef7765d6e180800000000000000
+      internalID: -9086340557669425272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
