@@ -16,9 +16,19 @@ MonoBehaviour:
   npcPortrait: {fileID: -9011517501306777680, guid: e2165e651dcf72f4497e5c1e0a592676, type: 3}
   dialogueLines:
   - Hello stranger
-  - What you need
-  autoProgressLines: 0100
-  autoProgressDelay: 1.5
+  - Can you help
+  - Thanks
+  - Okay :(
+  autoProgressLines: 01010000
+  endDialogueLines: 00000101
+  autoProgressDelay: 0.7
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
   voicePitch: 0
+  choices:
+  - dialogueIndex: 1
+    choices:
+    - Yes
+    - No
+    - Maybe
+    nextDialogueIndexes: 020000000300000003000000
