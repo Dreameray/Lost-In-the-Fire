@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 2315407215
+    locked: 0
+  - name: UI
+    uniqueID: 3782174267
     locked: 0
   - name: WalkInfront
     uniqueID: 3683953233

@@ -1,23 +1,34 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class PlayerItemCollector : MonoBehaviour
 {
-    void Start()
-    {
-       
-    }
+    [Tooltip("How many items have we picked up so far?")]
+    public int itemsCollected = 0;
 
-    // Update is called once per frame
-    private void OnTriggerEnter2D(Collider2D Collision)
+    [Tooltip("How many items the player needs to collect for the quest.")]
+    public int requiredItems = 3;
+
+    // Make sure your Player GameObject has:
+    //  • a Rigidbody2D (Dynamic or Kinematic)
+    //  • a Collider2D (non‑trigger)
+    //  • this script attached
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Collision.CompareTag("Item"))
+        // “Item” must match the Tag you gave your prefab
+        if (collision.CompareTag("Item"))
         {
-            Item item = Collision.GetComponent<Item>();
+            itemsCollected++;
+            Debug.Log($"Picked up item {itemsCollected}/{requiredItems}");
 
-            if (itemAdded)
+            // remove the item from the world
+            Destroy(collision.gameObject);
+
+            // (Optional) check for quest completion
+            if (itemsCollected >= requiredItems)
             {
-                //
+                Debug.Log("🎉 Quest complete!");
+                // TODO: fire your quest‑complete logic here
             }
         }
     }
