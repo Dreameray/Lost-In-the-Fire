@@ -13,22 +13,40 @@ public class PlayerItemCollector : MonoBehaviour
     //  • a Collider2D (non‑trigger)
     //  • this script attached
 
+    /*
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            // “Item” must match the Tag you gave your prefab
+            if (collision.CompareTag("Item"))
+            {
+                itemsCollected++;
+                Debug.Log($"Picked up item {itemsCollected}/{requiredItems}");
+
+                // remove the item from the world
+                Destroy(collision.gameObject);
+
+                // (Optional) check for quest completion
+                if (itemsCollected >= requiredItems)
+                {
+                    Debug.Log("🎉 Quest complete!");
+                    // TODO: fire your quest‑complete logic here
+                }
+            }
+        }*/
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // “Item” must match the Tag you gave your prefab
         if (collision.CompareTag("Item"))
         {
-            itemsCollected++;
-            Debug.Log($"Picked up item {itemsCollected}/{requiredItems}");
-
-            // remove the item from the world
+            // Destroy the item first
             Destroy(collision.gameObject);
 
-            // (Optional) check for quest completion
-            if (itemsCollected >= requiredItems)
+            // Cache quest before progress (it will be null after completion)
+            var quest = QuestManager.I.ActiveQuest;
+            if (quest != null)
             {
-                Debug.Log("🎉 Quest complete!");
-                // TODO: fire your quest‑complete logic here
+                QuestManager.I.AddProgress(1);
+                Debug.Log($"Collected: {quest.CurrentCount}/{quest.RequiredCount}");
             }
         }
     }

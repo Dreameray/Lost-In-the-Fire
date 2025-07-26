@@ -141,7 +141,8 @@ public class NPC : MonoBehaviour, IInteractable
         StopAllCoroutines();
         isDialogueActive = false;
         dialogueUI.SetDialogueText("");
-        dialogueUI.ShowDialogueUI(false);
+        // dialogueUI.ShowDialogueUI(false); // REMOVE THIS LINE
+        dialogueUI.EndDialogue(); // ADD THIS LINE
         PauseController.SetPause(false);
 
     }

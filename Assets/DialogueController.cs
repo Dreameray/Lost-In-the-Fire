@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
@@ -12,6 +13,9 @@ public class DialogueController : MonoBehaviour
 
     public Transform choiceContainer;
     public GameObject choiceButtonPrefab;
+
+    [Header("Events")]
+    public UnityEvent OnDialogueComplete;
 
     void Awake()
     {
@@ -28,6 +32,13 @@ public class DialogueController : MonoBehaviour
     public void ShowDialogueUI(bool show)
     {
         dialoguePanel.SetActive(show);
+    }
+
+    // Call this instead of ShowDialogueUI(false) when the convo truly ends:
+    public void EndDialogue()
+    {
+        ShowDialogueUI(false);
+        OnDialogueComplete?.Invoke();
     }
 
     public void SetNPCInfo(string npcName, Sprite portrait)
