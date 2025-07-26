@@ -21,6 +21,8 @@ public class QuestUI : MonoBehaviour
     public float logFadeDuration       = 1f;  // seconds to fade in log
     public float panelHideDelay        = 3f;  // after final quest completes
 
+    private bool secondQuestStarted = false;
+
     private void Start()
     {
         // hide both at start
@@ -87,8 +89,16 @@ public class QuestUI : MonoBehaviour
 
     private void OnQuestCompleted(Quest q)
     {
+        Debug.Log($"Quest completed: {q.Title}");
+
         titleText.text = $"{q.Title} Completed!";
         descText.text  = "";
+
+        if (q.Title == "Yummy Yummy" && !secondQuestStarted)
+        {
+            secondQuestStarted = true;
+            StartCoroutine(DelayedStartSecondQuest());
+        }
 
         // if it’s your final quest (RequiredCount==0), fade out the panel after a delay
         if (q.RequiredCount == 0)
@@ -100,6 +110,16 @@ public class QuestUI : MonoBehaviour
         yield return new WaitForSeconds(panelHideDelay);
         yield return FadeCanvasGroup(questLogCanvas, 1f, 0f, logFadeDuration);
         questLogPanel.SetActive(false);
+    }
+
+    private IEnumerator DelayedStartSecondQuest()
+    {
+        // Wait for the completion message and fade out
+        yield return new WaitForSeconds(panelHideDelay + logFadeDuration);
+
+        // Now start the second quest
+        Quest q2 = new Quest("Return Home", "", 1);
+        QuestManager.I.StartQuest(q2);
     }
 
     private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float dur)
@@ -116,7 +136,15 @@ public class QuestUI : MonoBehaviour
     }
 
     private string FormatDesc(Quest q)
-        => q.RequiredCount > 0
-           ? $"{q.Description} {q.CurrentCount}/{q.RequiredCount}"
-           : q.Description;
+    {
+        // Hide progress for "Return Home"
+        if (q.Title == "Return Home")
+            return ""; // or return ""; if you want it totally blank
+
+        // Default: show progress
+        if (q.RequiredCount > 0)
+            return $"{q.Description} {q.CurrentCount}/{q.RequiredCount}";
+        else
+            return q.Description;
+    }
 }
