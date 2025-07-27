@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; // Add this line
 
 public class GameManager : MonoBehaviour
 {
@@ -41,6 +42,13 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: 0";
         currentMultiplier = 1;
 
+        // Set up the selected song
+        if (SongSelectionManager.selectedSong != null)
+        {
+            theMusic.clip = SongSelectionManager.selectedSong.audioClip;
+            theBS.beatTempo = SongSelectionManager.selectedSong.bpm;
+            FindObjectOfType<NoteSpawner>().spawnInterval = SongSelectionManager.selectedSong.noteSpawnInterval;
+        }
     }
 
     // Update is called once per frame
@@ -68,7 +76,7 @@ public class GameManager : MonoBehaviour
                 missesText.text = "" + missedHits;
 
                 float totalHit = normalHits + goodHits + perfectHits;
-                float percentHit = (totalHit / totalNotes) * 100f;
+                float percentHit = (totalHit / totalNotes) + 100f;
 
                 percentHitText.text = percentHit.ToString("F1") + "%";
 
@@ -98,6 +106,11 @@ public class GameManager : MonoBehaviour
                 rankText.text = rankVal;
 
                 finalScoreText.text = currentScore.ToString();
+
+                // Add a button to your Results Screen in Unity Inspector
+                // that calls this method when clicked
+                Button continueButton = resultsScreen.GetComponentInChildren<Button>();
+                continueButton.onClick.AddListener(ReturnToSongSelection);
             }
         }
     }
@@ -155,5 +168,56 @@ public class GameManager : MonoBehaviour
         multiText.text = "Multiplier: x" + currentMultiplier.ToString();
 
         missedHits++;
+    }
+
+    // Add method to return to song selection
+    public void ReturnToSongSelection()
+    {
+        resultsScreen.SetActive(false);
+        if (SongSelectionManager.instance != null)
+        {
+            SongSelectionManager.instance.ShowSongSelection();
+        }
+        else
+        {
+            Debug.LogError("SongSelectionManager instance is null! Check if it exists in the scene.");
+        }
+    }
+
+    public void StartNewSong(SongData song)
+    {
+        // Reset all stats
+        currentScore = 0;
+        normalHits = 0;
+        goodHits = 0;
+        perfectHits = 0;
+        missedHits = 0;
+        totalNotes = 0;
+        currentMultiplier = 1;
+        multiplierTracker = 0;
+        
+        // Reset UI
+        scoreText.text = "Score: 0";
+        multiText.text = "Multiplier: x1";
+        resultsScreen.SetActive(false);
+        
+        // Set up new song
+        theMusic.clip = song.audioClip;
+        theBS.beatTempo = song.bpm;
+        theBS.RecalculateSpeed(); // Use the new public method instead
+        theBS.ResetPosition();
+        
+        // Update note spawn interval
+        var noteSpawner = FindObjectOfType<NoteSpawner>();
+        if (noteSpawner != null)
+        {
+            noteSpawner.spawnInterval = song.noteSpawnInterval;
+            noteSpawner.ResetSpawner(); // Add this method to NoteSpawner
+        }
+        
+        // Auto-start the song and gameplay
+        startPlaying = true;
+        theBS.hasStarted = true;
+        theMusic.Play();
     }
 }

@@ -10,12 +10,32 @@ public class NoteSpawner : MonoBehaviour
     private float timer = 0f;
     private bool spawning = false;
 
+    public void ResetSpawner()
+    {
+        spawning = false;
+        timer = 0f;
+        
+        // Clear any existing notes
+        foreach (Transform child in noteHolder)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
     void Update()
     {
-        // Start spawning when the game starts (customize as you need)
+        // Start spawning when the game starts
         if (!spawning && GameManager.instance.startPlaying)
         {
             spawning = true;
+            timer = 0f; // Reset timer when starting
+        }
+
+        // Stop spawning when music ends
+        if (!GameManager.instance.theMusic.isPlaying)
+        {
+            spawning = false;
+            return;
         }
 
         if (!spawning) return;
@@ -32,6 +52,7 @@ public class NoteSpawner : MonoBehaviour
     {
         var prefab = notePrefabs[direction];
         var pos = spawnPoints[direction].position;
-        Instantiate(prefab, pos, prefab.transform.rotation, noteHolder); // Parent under NoteHolder
+        Instantiate(prefab, pos, prefab.transform.rotation, noteHolder);
+        GameManager.instance.totalNotes++; // Add this line
     }
 }
