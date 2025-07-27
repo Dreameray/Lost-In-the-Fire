@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     public int multiplierTracker;
     public int[] multiplierThresholds;
 
-
     public Text scoreText;
     public Text multiText;
 
@@ -34,17 +33,13 @@ public class GameManager : MonoBehaviour
     public GameObject resultsScreen;
     public Text percentHitText, normalsText, goodsText, perfectsText, missesText, rankText, finalScoreText;
 
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         instance = this;
 
         scoreText.text = "Score: 0";
-
         currentMultiplier = 1;
-
-        totalNotes = FindObjectsOfType<NoteObject>().Length;
 
     }
 
@@ -58,6 +53,7 @@ public class GameManager : MonoBehaviour
                 startPlaying = true;
                 theBS.hasStarted = true;
                 theMusic.Play();
+
             }
         }
         else
@@ -121,10 +117,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-
         multiText.text = "Multiplier: x" + currentMultiplier.ToString();
-
-        //currentScore += scorePerNote * currentMultiplier;
         scoreText.text = "Score: " + currentScore.ToString();
     }
 
@@ -133,7 +126,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("Normal Hit!");
         currentScore += scorePerNote * currentMultiplier;
         NoteHit();
-
         normalHits++;
     }
 
@@ -163,6 +155,5 @@ public class GameManager : MonoBehaviour
         multiText.text = "Multiplier: x" + currentMultiplier.ToString();
 
         missedHits++;
-
     }
 }
