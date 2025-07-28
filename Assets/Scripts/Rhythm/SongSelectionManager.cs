@@ -94,11 +94,14 @@ public class SongSelectionManager : MonoBehaviour
     {
         selectedSong = song;
         songSelectionPanel.SetActive(false);
-        
+
         // Reset BeatScroller position
         GameManager.instance.theBS.transform.position = Vector3.zero;
-        
-        GameManager.instance.StartNewSong(song);
+
+        //GameManager.instance.StartNewSong(song);
+        // 🧠 Use coroutine instead of direct start
+        StartCoroutine(GameManager.instance.LoadAndStartGame(song));
+
     }
 
     public void ShowSongSelection()

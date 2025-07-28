@@ -1,8 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement; // Add this line
-using UnityEngine.Video;
-using Unity.VisualScripting; // ✅ Required for VideoPlayer
+using UnityEngine.Video; // ✅ Required for VideoPlayer
+using Unity.VisualScripting;
+using UnityEngine.UI; // ✅ Required for UI elements
+using System.Collections; 
 
 
 public class GameManager : MonoBehaviour
@@ -21,16 +23,16 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public int currentScore;
-    public int scorePerNote = 100;
-    public int scorePerGoodNote = 125;
+    public int scorePerNote = 50;
+    public int scorePerGoodNote = 100;
     public int scorePerPerfectNote = 150;
 
     public int currentMultiplier;
     public int multiplierTracker;
     public int[] multiplierThresholds;
 
-    public Text scoreText;
-    public Text multiText;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI multiText;
 
     public float totalNotes;
     public float normalHits;
@@ -39,14 +41,16 @@ public class GameManager : MonoBehaviour
     public float missedHits;
 
     public GameObject resultsScreen;
-    public Text percentHitText, normalsText, goodsText, perfectsText, missesText, rankText, finalScoreText;
+    public TextMeshProUGUI percentHitText, normalsText, goodsText, perfectsText, missesText, rankText, finalScoreText;
+
+    [SerializeField] public GameObject loadingPanel; // assign in Inspector
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         instance = this;
 
-        scoreText.text = "Score: 0";
+        scoreText.text = "0";
         currentMultiplier = 1;
 
         // ✅ Stop video player and clear clip
@@ -149,8 +153,8 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        multiText.text = "Multiplier: x" + currentMultiplier.ToString();
-        scoreText.text = "Score: " + currentScore.ToString();
+        multiText.text = "x" + currentMultiplier.ToString();
+        scoreText.text = currentScore.ToString();
     }
 
     public void NormalHit()
@@ -184,7 +188,7 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
         multiplierTracker = 0;
 
-        multiText.text = "Multiplier: x" + currentMultiplier.ToString();
+        multiText.text = "x" + currentMultiplier.ToString();
 
         missedHits++;
     }
@@ -220,8 +224,8 @@ public class GameManager : MonoBehaviour
 
 
         // Reset UI
-        scoreText.text = "Score: 0";
-        multiText.text = "Multiplier: x1";
+        scoreText.text = "0";
+        multiText.text = "x1";
         resultsScreen.SetActive(false);
 
         // 🎵 Set up new audio
@@ -260,5 +264,26 @@ public class GameManager : MonoBehaviour
         theMusic.Play(); // Start audio
     }
     
+
+    public IEnumerator LoadAndStartGame(SongData song)
+    {
+        loadingPanel.SetActive(true); // show UI
+        TMP_Text preloadTMP = new GameObject("TMPPreload").AddComponent<TextMeshProUGUI>();
+        preloadTMP.text = "TMP Init";
+        preloadTMP.gameObject.SetActive(false);
+
+        videoPlayer.clip = song.videoClip;
+        theMusic.clip = song.audioClip;
+
+        videoPlayer.Prepare();
+        while (!videoPlayer.isPrepared)
+            yield return null;
+
+        yield return new WaitForSeconds(1.5f); // short buffer
+        loadingPanel.SetActive(false);
+        StartNewSong(song);
+    }
+
+
 
 }

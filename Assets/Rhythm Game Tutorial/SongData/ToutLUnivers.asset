@@ -19,3 +19,5 @@ MonoBehaviour:
   albumCover: {fileID: 0}
   difficulty: 
   videoClip: {fileID: 32900000, guid: 510382e36bd9b8b44badd52daea21dbb, type: 3}
+  noteSpawnStartDelay: 0.5
+  noteSpawnEndOffset: 16
