@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 872e4e1d2a48e294a935d755809b7ffc, type: 3}
-  m_Name: Song1
+  m_Name: ToutLUnivers
   m_EditorClassIdentifier: 
-  songName: Tutlu
-  audioClip: {fileID: 8300000, guid: 5a16743a5df7d544baf7000b55d56ed6, type: 3}
-  bpm: 60
-  noteSpawnInterval: 1
+  songName: Tout L'Univers
+  audioClip: {fileID: 8300000, guid: 6a150dc0abd6f324cbb53a10a1aa10e5, type: 3}
+  bpm: 62
+  noteSpawnInterval: 0.8
   albumCover: {fileID: 0}
   difficulty: 
+  videoClip: {fileID: 32900000, guid: 510382e36bd9b8b44badd52daea21dbb, type: 3}

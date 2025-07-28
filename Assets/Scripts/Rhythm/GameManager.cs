@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement; // Add this line
+using UnityEngine.Video; // ✅ Required for VideoPlayer
+
 
 public class GameManager : MonoBehaviour
 {
-
     public AudioSource theMusic;
+    public VideoPlayer videoPlayer; // ✅ Assign in the Inspector later
+
 
     public bool startPlaying;
 
@@ -195,29 +198,84 @@ public class GameManager : MonoBehaviour
         totalNotes = 0;
         currentMultiplier = 1;
         multiplierTracker = 0;
-        
+
         // Reset UI
         scoreText.text = "Score: 0";
         multiText.text = "Multiplier: x1";
         resultsScreen.SetActive(false);
-        
-        // Set up new song
+
+        // 🎵 Set up new audio
         theMusic.clip = song.audioClip;
+        theMusic.Stop(); // Reset to beginning
+
+        // 🎞️ Set up new video
+        if (videoPlayer != null)
+        {
+            videoPlayer.Stop(); // Reset any previous video
+            videoPlayer.clip = song.videoClip;
+
+            // This ensures audio and video start from the same time
+            videoPlayer.time = 0;
+        }
+
+        // 🧠 Apply note settings
         theBS.beatTempo = song.bpm;
-        theBS.RecalculateSpeed(); // Use the new public method instead
+        theBS.RecalculateSpeed();
         theBS.ResetPosition();
-        
-        // Update note spawn interval
+
         var noteSpawner = FindObjectOfType<NoteSpawner>();
         if (noteSpawner != null)
         {
             noteSpawner.spawnInterval = song.noteSpawnInterval;
-            noteSpawner.ResetSpawner(); // Add this method to NoteSpawner
+            noteSpawner.ResetSpawner();
         }
-        
-        // Auto-start the song and gameplay
+
+        // ✅ Start gameplay
         startPlaying = true;
         theBS.hasStarted = true;
-        theMusic.Play();
+
+        if (videoPlayer != null)
+            videoPlayer.Play(); // Start video
+
+        theMusic.Play(); // Start audio
     }
+    
+    //OLD START NEW SONG WITHOUD VIDEO
+/*  public void StartNewSong(SongData song)
+  {
+      // Reset all stats
+      currentScore = 0;
+      normalHits = 0;
+      goodHits = 0;
+      perfectHits = 0;
+      missedHits = 0;
+      totalNotes = 0;
+      currentMultiplier = 1;
+      multiplierTracker = 0;
+
+      // Reset UI
+      scoreText.text = "Score: 0";
+      multiText.text = "Multiplier: x1";
+      resultsScreen.SetActive(false);
+
+      // Set up new song
+      theMusic.clip = song.audioClip;
+      theBS.beatTempo = song.bpm;
+      theBS.RecalculateSpeed(); // Use the new public method instead
+      theBS.ResetPosition();
+
+      // Update note spawn interval
+      var noteSpawner = FindObjectOfType<NoteSpawner>();
+      if (noteSpawner != null)
+      {
+          noteSpawner.spawnInterval = song.noteSpawnInterval;
+          noteSpawner.ResetSpawner(); // Add this method to NoteSpawner
+      }
+
+      // Auto-start the song and gameplay
+      startPlaying = true;
+      theBS.hasStarted = true;
+      theMusic.Play();
+  }*/
+
 }

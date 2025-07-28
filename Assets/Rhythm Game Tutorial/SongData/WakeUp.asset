@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 872e4e1d2a48e294a935d755809b7ffc, type: 3}
-  m_Name: Song2
+  m_Name: WakeUp
   m_EditorClassIdentifier: 
-  songName: Toutl universe
-  audioClip: {fileID: 8300000, guid: d1e8980952811704a8da640f653bc3f5, type: 3}
-  bpm: 120
-  noteSpawnInterval: 0.5
+  songName: Wake Up
+  audioClip: {fileID: 8300000, guid: 42074dd3b79dbdf4f91b2211abb73adb, type: 3}
+  bpm: 109
+  noteSpawnInterval: 0.54
   albumCover: {fileID: 0}
   difficulty: 
+  videoClip: {fileID: 32900000, guid: c9ce0e9baf036ca4389876edbd590169, type: 3}
