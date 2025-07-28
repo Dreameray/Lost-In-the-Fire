@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - Activator
+  - DestroyZone
   layers:
   - Default
   - TransparentFX

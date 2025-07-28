@@ -9,12 +9,15 @@ public class NoteSpawner : MonoBehaviour
     public float spawnInterval = 0.5f;
     private float timer = 0f;
     private bool spawning = false;
+    
+    private float songTime => GameManager.instance.theMusic.time;
+
 
     public void ResetSpawner()
     {
         spawning = false;
         timer = 0f;
-        
+
         // Clear any existing notes
         foreach (Transform child in noteHolder)
         {
@@ -24,21 +27,31 @@ public class NoteSpawner : MonoBehaviour
 
     void Update()
     {
-        // Start spawning when the game starts
-        if (!spawning && GameManager.instance.startPlaying)
+        if (!GameManager.instance.startPlaying)
+            return;
+
+        var song = GameManager.selectedSong;
+        if (song == null)
+            return;
+
+        // Start spawning only after song.noteSpawnStartDelay
+        if (!spawning && songTime >= song.noteSpawnStartDelay)
         {
             spawning = true;
-            timer = 0f; // Reset timer when starting
+            timer = 0f;
         }
 
-        // Stop spawning when music ends
-        if (!GameManager.instance.theMusic.isPlaying)
+        // Stop spawning before end, using noteSpawnEndOffset
+        float endOffset = song.noteSpawnEndOffset;
+        if (GameManager.instance.theMusic.clip != null &&
+            songTime >= GameManager.instance.theMusic.clip.length - endOffset)
         {
             spawning = false;
             return;
         }
 
-        if (!spawning) return;
+        if (!spawning)
+            return;
 
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
@@ -47,6 +60,7 @@ public class NoteSpawner : MonoBehaviour
             SpawnNote(Random.Range(0, 4));
         }
     }
+
 
     void SpawnNote(int direction)
     {

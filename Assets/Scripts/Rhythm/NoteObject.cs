@@ -60,6 +60,11 @@ public class NoteObject : MonoBehaviour
         {
             canBePressed = true;
         }
+
+         if (other.CompareTag("DestroyZone"))
+        {
+            Destroy(gameObject); // ✅ Clean up
+        }
     }
     
     private void OnTriggerExit2D(Collider2D other)
@@ -73,7 +78,7 @@ public class NoteObject : MonoBehaviour
             {
                 GameManager.instance.NoteMissed();
                 Instantiate(missEffect, transform.position, missEffect.transform.rotation);
-
+                Destroy(gameObject); // Clean up
             }
         }
     }

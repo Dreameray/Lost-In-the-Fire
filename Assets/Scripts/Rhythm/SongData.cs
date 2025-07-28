@@ -13,4 +13,9 @@ public class SongData : ScriptableObject
 
     [Header("Optional Visuals")]
     public VideoClip videoClip; // New field for music video
+
+    [Header("Timing Offsets")]
+    public float noteSpawnStartDelay = 0f;   // Time to delay the start of note spawn
+    public float noteSpawnEndOffset = 2f;    // Time after music ends to stop spawning
+
 }

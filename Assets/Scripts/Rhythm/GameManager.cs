@@ -1,13 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement; // Add this line
-using UnityEngine.Video; // ✅ Required for VideoPlayer
+using UnityEngine.Video;
+using Unity.VisualScripting; // ✅ Required for VideoPlayer
 
 
 public class GameManager : MonoBehaviour
 {
     public AudioSource theMusic;
     public VideoPlayer videoPlayer; // ✅ Assign in the Inspector later
+
+    public static SongData selectedSong; // ✅ Store it for global access
+
 
 
     public bool startPlaying;
@@ -45,14 +49,20 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: 0";
         currentMultiplier = 1;
 
-        // Set up the selected song
-        if (SongSelectionManager.selectedSong != null)
+        // ✅ Stop video player and clear clip
+        if (videoPlayer != null)
         {
-            theMusic.clip = SongSelectionManager.selectedSong.audioClip;
-            theBS.beatTempo = SongSelectionManager.selectedSong.bpm;
-            FindObjectOfType<NoteSpawner>().spawnInterval = SongSelectionManager.selectedSong.noteSpawnInterval;
+            videoPlayer.Stop();
+            videoPlayer.clip = null;
+        }
+
+        // ✅ Show the song selection UI
+        if (SongSelectionManager.instance != null)
+        {
+            SongSelectionManager.instance.ShowSongSelection();
         }
     }
+
 
     // Update is called once per frame
     void Update()
@@ -69,7 +79,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (!theMusic.isPlaying && !resultsScreen.activeInHierarchy)
+            // ✅ Only trigger results when song has truly ended
+            if (!resultsScreen.activeInHierarchy &&
+                theMusic.clip != null &&
+                theMusic.time >= theMusic.clip.length - 0.1f)
             {
                 resultsScreen.SetActive(true);
 
@@ -79,32 +92,35 @@ public class GameManager : MonoBehaviour
                 missesText.text = "" + missedHits;
 
                 float totalHit = normalHits + goodHits + perfectHits;
-                float percentHit = (totalHit / totalNotes) + 100f;
+                float percentHit = 0f;
 
+                if (totalNotes > 0)
+                {
+                    percentHit = (totalHit / totalNotes) * 100f;
+                }
+                else
+                {
+                    percentHit = 0f;
+                }
+
+                percentHit = Mathf.Clamp(percentHit, 0f, 100f);
                 percentHitText.text = percentHit.ToString("F1") + "%";
+
 
                 string rankVal = "F";
 
-                if (percentHit > 40)
-                {
+                if (percentHit > 90 && currentMultiplier >= 10)
+                    rankVal = "SS";
+                else if (percentHit > 95)
+                    rankVal = "S";
+                else if (percentHit > 85)
+                    rankVal = "A";
+                else if (percentHit > 70)
+                    rankVal = "B";
+                else if (percentHit > 55)
+                    rankVal = "C";
+                else if (percentHit > 40)
                     rankVal = "D";
-                    if (percentHit > 55)
-                    {
-                        rankVal = "C";
-                        if (percentHit > 70)
-                        {
-                            rankVal = "B";
-                            if (percentHit > 85)
-                            {
-                                rankVal = "A";
-                                if (percentHit > 95)
-                                {
-                                    rankVal = "S";
-                                }
-                            }
-                        }
-                    }
-                }
 
                 rankText.text = rankVal;
 
@@ -189,6 +205,9 @@ public class GameManager : MonoBehaviour
 
     public void StartNewSong(SongData song)
     {
+
+        selectedSong = song;
+
         // Reset all stats
         currentScore = 0;
         normalHits = 0;
@@ -198,6 +217,7 @@ public class GameManager : MonoBehaviour
         totalNotes = 0;
         currentMultiplier = 1;
         multiplierTracker = 0;
+
 
         // Reset UI
         scoreText.text = "Score: 0";
@@ -240,42 +260,5 @@ public class GameManager : MonoBehaviour
         theMusic.Play(); // Start audio
     }
     
-    //OLD START NEW SONG WITHOUD VIDEO
-/*  public void StartNewSong(SongData song)
-  {
-      // Reset all stats
-      currentScore = 0;
-      normalHits = 0;
-      goodHits = 0;
-      perfectHits = 0;
-      missedHits = 0;
-      totalNotes = 0;
-      currentMultiplier = 1;
-      multiplierTracker = 0;
-
-      // Reset UI
-      scoreText.text = "Score: 0";
-      multiText.text = "Multiplier: x1";
-      resultsScreen.SetActive(false);
-
-      // Set up new song
-      theMusic.clip = song.audioClip;
-      theBS.beatTempo = song.bpm;
-      theBS.RecalculateSpeed(); // Use the new public method instead
-      theBS.ResetPosition();
-
-      // Update note spawn interval
-      var noteSpawner = FindObjectOfType<NoteSpawner>();
-      if (noteSpawner != null)
-      {
-          noteSpawner.spawnInterval = song.noteSpawnInterval;
-          noteSpawner.ResetSpawner(); // Add this method to NoteSpawner
-      }
-
-      // Auto-start the song and gameplay
-      startPlaying = true;
-      theBS.hasStarted = true;
-      theMusic.Play();
-  }*/
 
 }
