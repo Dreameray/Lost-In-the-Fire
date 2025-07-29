@@ -26,5 +26,8 @@ public class GotyePosterNPC : MonoBehaviour
         // 2) Play the song
         audioSrc.clip = gotyeSong;
         audioSrc.Play();
+
+        PosterHintController.I.HideHint();
+
     }
 }

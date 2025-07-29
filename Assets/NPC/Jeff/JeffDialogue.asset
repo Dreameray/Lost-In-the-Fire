@@ -13,22 +13,34 @@ MonoBehaviour:
   m_Name: JeffDialogue
   m_EditorClassIdentifier: 
   npcName: Jeff the Landshark
-  npcPortrait: {fileID: -9011517501306777680, guid: e2165e651dcf72f4497e5c1e0a592676, type: 3}
+  npcPortrait: {fileID: -7353496626096632584, guid: e2165e651dcf72f4497e5c1e0a592676, type: 3}
   dialogueLines:
-  - Hello stranger
-  - Can you help
-  - Thanks
-  - Okay :(
+  - Rrrrrr.
+  - YUMMY YUMMY
+  - Da da da da da *intesifies*
+  - :(
+  - he he he he he *not hihi, hehe*
   autoProgressLines: 01010000
-  endDialogueLines: 00000101
+  endDialogueLines: 000001000000
   autoProgressDelay: 0.7
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
   voicePitch: 0
   choices:
+  - dialogueIndex: 0
+    choices:
+    - What are you doing here, you sharky?
+    nextDialogueIndexes: 01000000
   - dialogueIndex: 1
     choices:
-    - Yes
-    - No
-    - Maybe
-    nextDialogueIndexes: 020000000300000003000000
+    - You bad boy, get back to the room!
+    nextDialogueIndexes: 03000000
+  - dialogueIndex: 3
+    choices:
+    - You're not gonna listen me aren't you?
+    nextDialogueIndexes: 04000000
+  - dialogueIndex: 4
+    choices:
+    - You're not gonna listen me aren't you?
+    nextDialogueIndexes: 02000000
+  customFont: {fileID: 11400000, guid: c1a23c06a816ae2469300535cfa165a2, type: 2}

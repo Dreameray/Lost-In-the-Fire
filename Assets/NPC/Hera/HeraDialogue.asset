@@ -13,22 +13,138 @@ MonoBehaviour:
   m_Name: HeraDialogue
   m_EditorClassIdentifier: 
   npcName: Hera
-  npcPortrait: {fileID: -9011517501306777680, guid: e2165e651dcf72f4497e5c1e0a592676, type: 3}
+  npcPortrait: {fileID: 567366015890780593, guid: 9afd9ae8ab9df35429a2c4396536b0aa, type: 3}
   dialogueLines:
-  - Hello stranger
-  - Can you help
-  - Thanks
-  - Okay :(
+  - Mortal, whither dost thou wander beneath my gaze?
+  - "Tales? Is that what they call our agony now \u2014 bedtime myths for those who
+    never bled from them?"
+  - I am Hera, Queen of Olympus, consort of Zeus, guardian of sacred bonds and protector
+    of women.
+  - "Olympus stands beyond mortal sight \u2014 where thunder births silence and gods
+    sit idle, unchanging."
+  - He holds dominion over skies, yet stumbles often in desires no storm could cleanse.
+  - Then listen well. I once strung golden chains across the heavens to bind my husband
+    in shame. They do not carve such truths in stone.
+  - "True love is not born \u2014 it is forged, in hardship and humility, when two
+    souls carry the flame together."
+  - "To be woman is to carry the weight of creation, unseen and unthanked \u2014
+    and still rise with poise unbroken."
+  - Power often comes wrapped in silence, mistaken for meekness. Yet within that
+    quiet lies dominion.
+  - "Men speak loud of freedom, yet chain others with expectations. A woman endures
+    \u2014 and thus, she rules."
+  - "Endurance is not weakness. To stay, to forgive, to rebuild \u2014 that is strength
+    born of flame, not ash."
+  - Revenge is a bitter draught. I drank deeply once. Now I leave the cup untouched.
+  - "Hope\u2026 Elpis, they called her. The last spirit sealed in the jar Pandora
+    loosed upon the world."
+  - "Elpis was mercy. A light left behind when all else was lost. Cherish her \u2014
+    she belongs to mortals, not gods."
+  - "To hope is to ache. But in ache, you move. And in motion, you endure. So suffer
+    \u2014 and live."
+  - Olympus forgets as easily as it remembers. I do not long for clouds that never
+    held me close.
+  - Happiness, for us, is fleeting thunder. Brief. Loud. Gone.
+  - "In time, even gods misplace their grief \u2014 but never their scars."
+  - Speak further, if your heart still bears questions.
+  - "Then carry these truths, mortal. Let them weigh upon you \u2014 until you find
+    your own."
   autoProgressLines: 01010000
-  endDialogueLines: 00000101
+  endDialogueLines: 0000000000000000000000000000000000000001
   autoProgressDelay: 0.7
   typingSpeed: 0.05
   voiceSound: {fileID: 0}
   voicePitch: 0
   choices:
+  - dialogueIndex: 0
+    choices:
+    - Are you real? I love the old tales!
+    - Then tell me, what are you doing in this place?
+    - If you are Hera, reveal a truth no scroll holds.
+    nextDialogueIndexes: 010000000200000003000000
   - dialogueIndex: 1
     choices:
-    - Yes
-    - No
-    - Maybe
-    nextDialogueIndexes: 020000000300000003000000
+    - Forgive me. But what are you doing here?
+    - "If you're truly Hera, speak a truth I won\u2019t find in books."
+    nextDialogueIndexes: 0200000005000000
+  - dialogueIndex: 2
+    choices:
+    - Then, what is it to be a goddess?
+    - How does one find love that lasts?
+    - Do you miss Olympus?
+    nextDialogueIndexes: 07000000060000000f000000
+  - dialogueIndex: 3
+    choices:
+    - And Zeus? Was he ever faithful?
+    - Your throne sounds distant. Do you miss it?
+    nextDialogueIndexes: 040000000f000000
+  - dialogueIndex: 4
+    choices:
+    - And you endured that?
+    - Would you have rather ruled alone?
+    nextDialogueIndexes: 0a00000008000000
+  - dialogueIndex: 5
+    choices:
+    - What is hope, then, if even gods suffer?
+    - Do you ever regret the throne?
+    nextDialogueIndexes: 0c0000000f000000
+  - dialogueIndex: 6
+    choices:
+    - But what if it fades?
+    - Do mortals even deserve such love?
+    nextDialogueIndexes: 0a00000009000000
+  - dialogueIndex: 7
+    choices:
+    - Is that strength or punishment?
+    - Do you envy mortal women?
+    nextDialogueIndexes: 0800000009000000
+  - dialogueIndex: 8
+    choices:
+    - '[Continue...]'
+    nextDialogueIndexes: 12000000
+  - dialogueIndex: 9
+    choices:
+    - '[Continue...]'
+    nextDialogueIndexes: 12000000
+  - dialogueIndex: 10
+    choices:
+    - '[Continue...]'
+    nextDialogueIndexes: 12000000
+  - dialogueIndex: 11
+    choices:
+    - '[Continue...]'
+    nextDialogueIndexes: 12000000
+  - dialogueIndex: 12
+    choices:
+    - Is Elpis a gift to humankind?
+    - Or a cruel trick to prolong suffering?
+    nextDialogueIndexes: 0d0000000e000000
+  - dialogueIndex: 13
+    choices:
+    - '[Continue...]'
+    nextDialogueIndexes: 12000000
+  - dialogueIndex: 14
+    choices:
+    - '[Continue...]'
+    nextDialogueIndexes: 12000000
+  - dialogueIndex: 15
+    choices:
+    - Were you ever truly happy?
+    - Do gods forget too?
+    nextDialogueIndexes: 1000000011000000
+  - dialogueIndex: 16
+    choices:
+    - '[Continue...]'
+    nextDialogueIndexes: 12000000
+  - dialogueIndex: 17
+    choices:
+    - '[Continue...]'
+    nextDialogueIndexes: 12000000
+  - dialogueIndex: 18
+    choices:
+    - What is it to be a goddess?
+    - Tell me about hope again.
+    - Do you miss Olympus?
+    - I have heard enough.
+    nextDialogueIndexes: 070000000c0000000f00000013000000
+  customFont: {fileID: 11400000, guid: a39d8bc8e07e2f242a38d39a6c5a7321, type: 2}

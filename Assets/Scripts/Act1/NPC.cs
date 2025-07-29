@@ -49,6 +49,9 @@ public class NPC : MonoBehaviour, IInteractable
 
         PauseController.SetPause(true);
 
+        dialogueUI.SetFont(dialogueData.customFont);
+
+
         DisplayCurrentLine();
     }
 

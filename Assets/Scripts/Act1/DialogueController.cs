@@ -66,6 +66,16 @@ public class DialogueController : MonoBehaviour
         choiceButton.GetComponentInChildren<TMP_Text>().text = choiceText;
         choiceButton.GetComponent<Button>().onClick.AddListener(onClickAction);
     }
+
+    public void SetFont(TMP_FontAsset fontAsset)
+    {
+        if (fontAsset != null)
+        {
+            dialogueText.font = fontAsset;
+            nameText.font = fontAsset;
+        }
+    }
+
     
 
 }

@@ -22,6 +22,11 @@ public class QuestUI : MonoBehaviour
     public float panelHideDelay        = 3f;  // after final quest completes
 
     private bool secondQuestStarted = false;
+    
+    [Header("Quest Music Control")]
+    public AudioSource questMusicSource;
+    public AudioClip betweenQuestSong;
+
 
     private void Start()
     {
@@ -35,8 +40,8 @@ public class QuestUI : MonoBehaviour
             enabled = false;
             return;
         }
-        QuestManager.I.OnQuestStarted   += OnQuestStarted;
-        QuestManager.I.OnQuestUpdated   += OnQuestUpdated;
+        QuestManager.I.OnQuestStarted += OnQuestStarted;
+        QuestManager.I.OnQuestUpdated += OnQuestUpdated;
         QuestManager.I.OnQuestCompleted += OnQuestCompleted;
     }
 
@@ -60,6 +65,8 @@ public class QuestUI : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(BannerThenLogSequence());
     }
+
+    
 
     private IEnumerator BannerThenLogSequence()
     {

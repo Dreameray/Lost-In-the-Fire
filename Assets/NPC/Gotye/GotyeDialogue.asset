@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GotyeDialogue
   m_EditorClassIdentifier: 
   npcName: Somebody That I Used To Know
-  npcPortrait: {fileID: -9011517501306777680, guid: e2165e651dcf72f4497e5c1e0a592676, type: 3}
+  npcPortrait: {fileID: 3427773675169809836, guid: a32e820d8853acc4ba34372fa5e29337, type: 3}
   dialogueLines:
   - ...You woke up here too, huh? In this... blank place.
   - I can see it in your eyes. That same quiet panic I had.
@@ -185,3 +185,4 @@ MonoBehaviour:
     choices:
     - I have another question
     nextDialogueIndexes: 15000000
+  customFont: {fileID: 11400000, guid: c1a23c06a816ae2469300535cfa165a2, type: 2}
