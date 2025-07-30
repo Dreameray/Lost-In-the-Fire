@@ -41,30 +41,6 @@ TextureImporter:
   - first:
       213: 3068645542571971875
     second: erikprodlogo_12
-  - first:
-      213: 9173928700353800925
-    second: erikprodlogo_13
-  - first:
-      213: 1191247533327597489
-    second: erikprodlogo_14
-  - first:
-      213: -315255687388499841
-    second: erikprodlogo_15
-  - first:
-      213: 3401798151578401334
-    second: erikprodlogo_16
-  - first:
-      213: -1066224021619229358
-    second: erikprodlogo_17
-  - first:
-      213: -812800604603038521
-    second: erikprodlogo_18
-  - first:
-      213: 1330719297025440632
-    second: erikprodlogo_19
-  - first:
-      213: -6268132837515678776
-    second: erikprodlogo_20
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -163,12 +139,12 @@ TextureImporter:
       name: erikprodlogo_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1000
-        height: 1000
+        x: 140
+        y: 211
+        width: 714
+        height: 714
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -185,7 +161,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 134461b4a74874a4fadba4e4992946a4
+    spriteID: 1965b5490968ec646ba9c3aae7dd6f94
     internalID: 0
     vertices: []
     indices: 

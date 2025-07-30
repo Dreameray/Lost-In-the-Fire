@@ -20,12 +20,18 @@ public class SongSelectionManager : MonoBehaviour
     [Header("Song Data")]
     public List<SongData> availableSongs;    // Your list of songs
 
+    public Button finishGameButton; // Button to finish the game
+
+    [SerializeField] private LevelLoader levelLoader;  // Add this field
+
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
             CreateSongButtons();
+            SetupFinishButton();  // Add this line
+            
             if (songSelectionPanel != null)
             {
                 songSelectionPanel.SetActive(false);
@@ -87,6 +93,36 @@ public class SongSelectionManager : MonoBehaviour
             newButton.onClick.AddListener(() => SelectSong(song));
 
             Debug.Log($"Created button for song: {song.songName}");
+        }
+    }
+
+    void SetupFinishButton()
+    {
+        if (finishGameButton != null)
+        {
+            finishGameButton.onClick.AddListener(OnFinishGameClicked);
+            
+            // Find LevelLoader if not assigned
+            if (levelLoader == null)
+            {
+                levelLoader = FindObjectOfType<LevelLoader>();
+            }
+        }
+        else
+        {
+            Debug.LogError("Finish Game Button is not assigned!");
+        }
+    }
+
+    void OnFinishGameClicked()
+    {
+        if (levelLoader != null)
+        {
+            levelLoader.LoadNextLevel(); // This will transition to EndCredits scene
+        }
+        else
+        {
+            Debug.LogError("LevelLoader not found!");
         }
     }
 
