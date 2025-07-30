@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 78647843}
   - component: {fileID: 78647845}
   - component: {fileID: 78647844}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,6 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483a1296f0e87b64b8f7e21a195fdabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSong: {fileID: 11400000, guid: 6ba8bb7a3f551d14798a144a1e6f0abd, type: 2}
   songSelectionPanel: {fileID: 584159155}
   buttonContainer: {fileID: 1485797544}
   songButtonPrefab: {fileID: 7025894549946409783, guid: bd17d6c13c8f2e648b2cae3694fc3dbb, type: 3}
@@ -692,8 +693,9 @@ MonoBehaviour:
   availableSongs:
   - {fileID: 11400000, guid: a02f6166e8ba888449995d9769c67738, type: 2}
   - {fileID: 11400000, guid: bfd61a34ed2f89c40aca2e8bb92de542, type: 2}
-  - {fileID: 11400000, guid: 6ba8bb7a3f551d14798a144a1e6f0abd, type: 2}
+  - {fileID: 11400000, guid: c63d66b947f26334480066cad953dabb, type: 2}
   - {fileID: 11400000, guid: daac317f570bd6548a2be6452a212cb2, type: 2}
+  - {fileID: 11400000, guid: 6ba8bb7a3f551d14798a144a1e6f0abd, type: 2}
   finishGameButton: {fileID: 1062862806}
   levelLoader: {fileID: 755228138}
 --- !u!4 &164761550
@@ -780,8 +782,8 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_Camera: {fileID: 519420031}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -824,7 +826,7 @@ GameObject:
   - component: {fileID: 200920397}
   - component: {fileID: 200920399}
   - component: {fileID: 200920398}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Rank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -961,7 +963,7 @@ GameObject:
   - component: {fileID: 203599273}
   - component: {fileID: 203599272}
   - component: {fileID: 203599271}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: NextSongButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1302,7 +1304,8 @@ GameObject:
   - component: {fileID: 392905824}
   - component: {fileID: 392905826}
   - component: {fileID: 392905825}
-  m_Layer: 5
+  - component: {fileID: 392905827}
+  m_Layer: 0
   m_Name: MultiplierText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1427,6 +1430,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392905823}
   m_CullTransparentMesh: 1
+--- !u!225 &392905827
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392905823}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &430702658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,7 +1453,7 @@ GameObject:
   - component: {fileID: 430702659}
   - component: {fileID: 430702661}
   - component: {fileID: 430702660}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1461,7 +1476,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 66.2469}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &430702660
@@ -1752,7 +1767,7 @@ GameObject:
   - component: {fileID: 486379193}
   - component: {fileID: 486379195}
   - component: {fileID: 486379194}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Perfect Hits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2116,7 +2131,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -2154,7 +2169,8 @@ GameObject:
   - component: {fileID: 584159156}
   - component: {fileID: 584159158}
   - component: {fileID: 584159157}
-  m_Layer: 5
+  - component: {fileID: 584159159}
+  m_Layer: 0
   m_Name: SongSelectionPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2221,6 +2237,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584159155}
   m_CullTransparentMesh: 1
+--- !u!225 &584159159
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584159155}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &588350473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,7 +2260,8 @@ GameObject:
   - component: {fileID: 588350474}
   - component: {fileID: 588350476}
   - component: {fileID: 588350475}
-  m_Layer: 5
+  - component: {fileID: 588350477}
+  m_Layer: 0
   m_Name: BackgroundImageScore (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2296,6 +2325,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588350473}
   m_CullTransparentMesh: 1
+--- !u!225 &588350477
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588350473}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &646761232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2307,7 +2348,7 @@ GameObject:
   - component: {fileID: 646761233}
   - component: {fileID: 646761235}
   - component: {fileID: 646761234}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Percentage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2443,7 +2484,7 @@ GameObject:
   - component: {fileID: 668227011}
   - component: {fileID: 668227013}
   - component: {fileID: 668227012}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Normal Hits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2651,7 +2692,7 @@ GameObject:
   - component: {fileID: 693756394}
   - component: {fileID: 693756393}
   - component: {fileID: 693756392}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Missed Hits Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2864,7 +2905,8 @@ GameObject:
   - component: {fileID: 766832846}
   - component: {fileID: 766832848}
   - component: {fileID: 766832847}
-  m_Layer: 5
+  - component: {fileID: 766832849}
+  m_Layer: 0
   m_Name: Results
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2944,6 +2986,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766832845}
   m_CullTransparentMesh: 0
+--- !u!225 &766832849
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766832845}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &829640876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2986,7 +3040,7 @@ GameObject:
   - component: {fileID: 872026557}
   - component: {fileID: 872026559}
   - component: {fileID: 872026558}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3122,7 +3176,7 @@ GameObject:
   - component: {fileID: 1020092751}
   - component: {fileID: 1020092750}
   - component: {fileID: 1020092749}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Percentage Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3258,7 +3312,7 @@ GameObject:
   - component: {fileID: 1050149680}
   - component: {fileID: 1050149682}
   - component: {fileID: 1050149681}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Final Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3395,7 +3449,7 @@ GameObject:
   - component: {fileID: 1062862808}
   - component: {fileID: 1062862807}
   - component: {fileID: 1062862806}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FinishGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3624,7 +3678,8 @@ GameObject:
   - component: {fileID: 1232053288}
   - component: {fileID: 1232053290}
   - component: {fileID: 1232053289}
-  m_Layer: 5
+  - component: {fileID: 1232053291}
+  m_Layer: 0
   m_Name: BackgroundImageScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3688,6 +3743,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232053287}
   m_CullTransparentMesh: 1
+--- !u!225 &1232053291
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232053287}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1250600735
 GameObject:
   m_ObjectHideFlags: 0
@@ -3699,7 +3766,7 @@ GameObject:
   - component: {fileID: 1250600736}
   - component: {fileID: 1250600738}
   - component: {fileID: 1250600737}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3866,7 +3933,8 @@ GameObject:
   - component: {fileID: 1268174406}
   - component: {fileID: 1268174408}
   - component: {fileID: 1268174407}
-  m_Layer: 5
+  - component: {fileID: 1268174409}
+  m_Layer: 0
   m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3991,6 +4059,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268174405}
   m_CullTransparentMesh: 1
+--- !u!225 &1268174409
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268174405}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1289359574
 GameObject:
   m_ObjectHideFlags: 0
@@ -4168,7 +4248,7 @@ GameObject:
   - component: {fileID: 1303051814}
   - component: {fileID: 1303051813}
   - component: {fileID: 1303051812}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Perfect Hits Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4335,7 +4415,8 @@ GameObject:
   - component: {fileID: 1397752893}
   - component: {fileID: 1397752895}
   - component: {fileID: 1397752894}
-  m_Layer: 5
+  - component: {fileID: 1397752896}
+  m_Layer: 0
   m_Name: BackgroundImageScore (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4399,6 +4480,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397752892}
   m_CullTransparentMesh: 1
+--- !u!225 &1397752896
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397752892}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1398506518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4410,7 +4503,7 @@ GameObject:
   - component: {fileID: 1398506521}
   - component: {fileID: 1398506520}
   - component: {fileID: 1398506519}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Rank Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4546,7 +4639,7 @@ GameObject:
   - component: {fileID: 1435082945}
   - component: {fileID: 1435082944}
   - component: {fileID: 1435082943}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Good Hits Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4683,7 +4776,7 @@ GameObject:
   - component: {fileID: 1485797547}
   - component: {fileID: 1485797546}
   - component: {fileID: 1485797545}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ButtonContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4706,7 +4799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -39.4151}
+  m_AnchoredPosition: {x: 0, y: -39.41504}
   m_SizeDelta: {x: 0, y: -280.2784}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1485797545
@@ -4862,7 +4955,7 @@ GameObject:
   - component: {fileID: 1526592816}
   - component: {fileID: 1526592815}
   - component: {fileID: 1526592814}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Normal Hits Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5263,7 +5356,7 @@ GameObject:
   - component: {fileID: 1558776447}
   - component: {fileID: 1558776449}
   - component: {fileID: 1558776448}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Missed Hits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5400,7 +5493,7 @@ GameObject:
   - component: {fileID: 1605572181}
   - component: {fileID: 1605572180}
   - component: {fileID: 1605572179}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: UICanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5456,9 +5549,9 @@ Canvas:
   m_GameObject: {fileID: 1605572178}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -5467,7 +5560,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -512793029
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1605572182
@@ -5482,7 +5575,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1894841109}
   - {fileID: 766832846}
   - {fileID: 584159156}
   - {fileID: 1397752893}
@@ -5509,7 +5601,7 @@ GameObject:
   - component: {fileID: 1652717428}
   - component: {fileID: 1652717430}
   - component: {fileID: 1652717429}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Good Hits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5769,7 +5861,8 @@ GameObject:
   - component: {fileID: 1794268067}
   - component: {fileID: 1794268069}
   - component: {fileID: 1794268068}
-  m_Layer: 5
+  - component: {fileID: 1794268070}
+  m_Layer: 0
   m_Name: BackgroundImageScore (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5833,6 +5926,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794268066}
   m_CullTransparentMesh: 1
+--- !u!225 &1794268070
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794268066}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1885670407
 GameObject:
   m_ObjectHideFlags: 0
@@ -5904,85 +6009,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1894841108
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1894841109}
-  - component: {fileID: 1894841111}
-  - component: {fileID: 1894841110}
-  m_Layer: 5
-  m_Name: FailedText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1894841109
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894841108}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1605572182}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 835.2, y: 307.5}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1894841110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894841108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.04480028, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 99
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: TOO MANY NOTES MISSED!
---- !u!222 &1894841111
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894841108}
-  m_CullTransparentMesh: 0
 --- !u!1 &1898225052
 GameObject:
   m_ObjectHideFlags: 0
@@ -6249,7 +6275,7 @@ GameObject:
   - component: {fileID: 1994247367}
   - component: {fileID: 1994247366}
   - component: {fileID: 1994247365}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Final Score Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -2,11 +2,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using System.Collections;
 
 public class SongSelectionManager : MonoBehaviour
 {
     public static SongSelectionManager instance;
     public static SongData selectedSong;
+
+    // Add these at the top of the class
+    public static bool isReplay = false;
+    [SerializeField] private SongData defaultSong; // Assign your "Fairytale" song in inspector
 
     [Header("UI References")]
     public GameObject songSelectionPanel;    // Assign the main panel
@@ -26,15 +31,24 @@ public class SongSelectionManager : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log($"SongSelectionManager Awake - isReplay: {isReplay}");
         if (instance == null)
         {
             instance = this;
             CreateSongButtons();
-            SetupFinishButton();  // Add this line
-            
+            SetupFinishButton();
+
             if (songSelectionPanel != null)
             {
-                songSelectionPanel.SetActive(false);
+                // Show panel only if it's a replay
+                songSelectionPanel.SetActive(isReplay);
+                
+                // If it's first time, start with default song
+                if (!isReplay && defaultSong != null)
+                {
+                    // Add delay to ensure GameManager is ready
+                    StartCoroutine(StartWithDefaultSong());
+                }
             }
             else
             {
@@ -44,6 +58,22 @@ public class SongSelectionManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator StartWithDefaultSong()
+    {
+        // Wait for next frame to ensure GameManager is initialized
+        yield return new WaitForEndOfFrame();
+        
+        if (GameManager.instance != null && defaultSong != null)
+        {
+            SelectSong(defaultSong);
+            Debug.Log($"Starting with default song: {defaultSong.songName}");
+        }
+        else
+        {
+            Debug.LogError("GameManager not ready or defaultSong not assigned!");
         }
     }
 
@@ -128,6 +158,7 @@ public class SongSelectionManager : MonoBehaviour
 
     public void SelectSong(SongData song)
     {
+        Debug.Log($"Selecting song: {song.songName}");
         selectedSong = song;
         songSelectionPanel.SetActive(false);
 

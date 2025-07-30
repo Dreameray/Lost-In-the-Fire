@@ -49,22 +49,20 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-
         scoreText.text = "0";
         currentMultiplier = 1;
 
-        // ✅ Stop video player and clear clip
         if (videoPlayer != null)
         {
             videoPlayer.Stop();
             videoPlayer.clip = null;
         }
 
-        // ✅ Show the song selection UI
-        if (SongSelectionManager.instance != null)
-        {
-            SongSelectionManager.instance.ShowSongSelection();
-        }
+        // Remove this - don't always show selection
+        // if (SongSelectionManager.instance != null)
+        // {
+        //     SongSelectionManager.instance.ShowSongSelection();
+        // }
     }
 
 

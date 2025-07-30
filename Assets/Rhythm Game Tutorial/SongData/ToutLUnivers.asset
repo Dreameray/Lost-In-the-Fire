@@ -15,7 +15,7 @@ MonoBehaviour:
   songName: Tout L'Univers
   audioClip: {fileID: 8300000, guid: 6a150dc0abd6f324cbb53a10a1aa10e5, type: 3}
   bpm: 62
-  noteSpawnInterval: 0.8
+  noteSpawnInterval: 1
   albumCover: {fileID: 0}
   difficulty: 
   videoClip: {fileID: 32900000, guid: 510382e36bd9b8b44badd52daea21dbb, type: 3}

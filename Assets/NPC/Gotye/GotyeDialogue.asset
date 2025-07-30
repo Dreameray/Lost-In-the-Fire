@@ -158,9 +158,9 @@ MonoBehaviour:
     nextDialogueIndexes: 15000000
   - dialogueIndex: 21
     choices:
-    - Tell me something about Greek mythology.
-    - "Why didn\u2019t you make a new song after 2011?"
-    - Did you want people to remember you as the guy we used to know?
+    - Greek mythology?
+    - New song?
+    - You are literally someone we used to know, though?
     - Who created you?
     - Who is the song about?
     - No more questions.

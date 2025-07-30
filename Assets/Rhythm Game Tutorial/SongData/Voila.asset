@@ -15,7 +15,7 @@ MonoBehaviour:
   songName: Voila
   audioClip: {fileID: 8300000, guid: 37e9e6d2732e7514983674cff204d8dc, type: 3}
   bpm: 70
-  noteSpawnInterval: 1
+  noteSpawnInterval: 0.83
   albumCover: {fileID: 0}
   difficulty: 
   videoClip: {fileID: 32900000, guid: a7bb750079df51041b7c12d320d94df8, type: 3}
