@@ -141,6 +141,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -509,7 +522,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      A_charming_16_bit_2D...-1803368983-0_0: -5286803213411539529
+      A_charming_16_bit_2D...-1803368983-0_1: 2767113521142134516
+      A_charming_16_bit_2D...-1803368983-0_10: -3399125660441988746
+      A_charming_16_bit_2D...-1803368983-0_11: -368251988363735283
+      A_charming_16_bit_2D...-1803368983-0_12: 7070206195895861366
+      A_charming_16_bit_2D...-1803368983-0_13: 297256110923099451
+      A_charming_16_bit_2D...-1803368983-0_14: 1921615846195355203
+      A_charming_16_bit_2D...-1803368983-0_15: -9086340557669425272
+      A_charming_16_bit_2D...-1803368983-0_2: 2920371781582230921
+      A_charming_16_bit_2D...-1803368983-0_3: -8042659678867102449
+      A_charming_16_bit_2D...-1803368983-0_4: -4929868821069742108
+      A_charming_16_bit_2D...-1803368983-0_5: -4999533162372576790
+      A_charming_16_bit_2D...-1803368983-0_6: -118402654013560079
+      A_charming_16_bit_2D...-1803368983-0_7: -6800801963203348535
+      A_charming_16_bit_2D...-1803368983-0_8: -5303507405543255239
+      A_charming_16_bit_2D...-1803368983-0_9: 3546156689421282041
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

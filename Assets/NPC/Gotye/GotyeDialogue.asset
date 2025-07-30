@@ -52,8 +52,8 @@ MonoBehaviour:
     Maybe it\u2019s better to be one haunting memory than another forgotten verse."
   - "Would you rather be remembered for one thing... or not at all? At least I\u2019m
     still echoing in someone\u2019s head. Even if it\u2019s just you."
-  - "ou mean this world? I guess you\u2019ll find out. Or maybe you\u2019re the one
-    creating it, without knowing."
+  - "You mean this world? I guess you\u2019ll find out. Or maybe you\u2019re the
+    one creating it, without knowing."
   - "I don\u2019t know the details. My screenwriter never told me much. I\u2019m
     just the voice that carried it."
   - Then go. Find the threads. Or stay... and fade like the rest.
@@ -124,7 +124,8 @@ MonoBehaviour:
     - '[Continue...]'
     nextDialogueIndexes: 10000000
   - dialogueIndex: 13
-    choices: []
+    choices:
+    - '[Continue...]'
     nextDialogueIndexes: 10000000
   - dialogueIndex: 14
     choices:
